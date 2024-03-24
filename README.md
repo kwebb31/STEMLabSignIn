@@ -13,6 +13,7 @@ This is a simple Python application built using Tkinter for creating an interact
 ![image](https://github.com/kwebb31/STEMLabSignIn/assets/121592902/fc564f90-9d61-467d-aa22-590508c1f4d7)
 
 -File Storage: The netID of the student, the current date, and course or general study will be stored in the studentInfo.txt file as CSVs. It will update daily (all information from the previous day will be cleared). To change this, delete the following two lines of code in your source Python file: 
+
 ![image](https://github.com/kwebb31/STEMLabSignIn/assets/121592902/524ed8d5-0d25-452f-bea5-94f7c6044445)
 
 ## Usage:
