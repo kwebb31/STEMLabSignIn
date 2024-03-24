@@ -8,6 +8,7 @@ This is a simple Python application built using Tkinter for creating an interact
 ![image](https://github.com/kwebb31/STEMLabSignIn/assets/121592902/208e8e20-615a-410d-a016-d8c2e93a2717)
 
 * Exit option: Users can type "exit" or "stop" to exit the application.
+  ![image](https://github.com/kwebb31/STEMLabSignIn/assets/121592902/29bb0bde-1ffa-42e8-83d3-35fb853e950e)
 
 * Course selection: After entering a student ID, users can select between taking a course or general study.
 ![image](https://github.com/kwebb31/STEMLabSignIn/assets/121592902/fc564f90-9d61-467d-aa22-590508c1f4d7)
