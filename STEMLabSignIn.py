@@ -3,9 +3,12 @@ from tkinter import ttk
 from tkinter import messagebox
 from datetime import datetime
 
+#overwrites the previous information in the file to create a newly emptied file, writes, and closes the file. 
 oldfile = open("studentInfo.txt", "w")
 oldfile.write("")
 oldfile.close()
+
+#the rest of the writes will be appends so they don't get overwritten
 outfile = open("studentInfo.txt", "a")
 class StudentGUI:
     def __init__(self, master=None):
@@ -18,23 +21,33 @@ class StudentGUI:
         self.create_widgets()
 
     def create_widgets(self):
+        #the frame that is created, the color and the way that the frame is used 
         self.frame = tk.Frame(self.root, bg="#333333")
         self.frame.pack(expand=True, fill="both")
-
+        
+        #the label for the window
         self.label = ttk.Label(self.frame, text="Enter Student ID:", font=("Helvetica", 18), background="#333333", foreground="white")
         self.label.grid(row=0, column=0, padx=10, pady=10, sticky="e")
 
+        #formatting the text and patterns of the entries
         self.entry = ttk.Entry(self.frame, font=("Helvetica", 18))
         self.entry.grid(row=0, column=1, padx=10, pady=10, sticky="ew")
 
-        # Doubling width of the buttons
+        #Doubling width of the buttons
         self.submit_button = ttk.Button(self.frame, text="Submit", command=self.submit_id, width=40)
         self.submit_button.grid(row=1, column=0, columnspan=2, padx=10, pady=10, sticky="ew")
 
     def submit_id(self):
+        #gets the entry for the student id and removes any whitespace or extrraneous chracters
         student_id = self.entry.get().strip()
+       
+        #ensures that the netID is not empty
         if student_id == "":
             self.show_error("Please enter a student ID.")
+        #Checks to make sure that the first and second chars are alphabetical, and that the last four are numbers.
+        elif student_id[0].isalpha() == False or  student_id[1].isalpha() == False or student_id[2].isnumeric() == False or student_id[3].isnumeric() == False or student_id[4].isnumeric == False or student_id[5].isnumeric() == False:
+            self.show_error("Please enter a valid student ID.")
+        #the break statement so that LAs can end the day and close the program
         elif student_id.lower() in ["exit", "stop"]:
             print("Thanks for your hard work today!")
             self.show_LA("Thanks for your hard work!")
@@ -56,6 +69,7 @@ class StudentGUI:
         course_window.title("Course Selection")
         course_window.geometry("400x300")
 
+        #background and frame for the course page
         course_frame = tk.Frame(course_window, bg="#333333")
         course_frame.pack(expand=True, fill="both")
 
